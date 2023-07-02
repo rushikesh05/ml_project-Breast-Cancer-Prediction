@@ -3,9 +3,88 @@
 <head>
     <title>Input Form</title>
 </head>
+<style>
+    /* CSS styles for the form */
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #efa6ed, #90bcf1);
+    }
+    
+
+    .container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        animation: fade-in 0.5s ease-out;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background: linear-gradient(to bottom, #fff, #f2f2f2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus {
+        outline: none;
+        box-shadow: 0 0 5px #88b1e9;
+    }
+
+    #btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: linear-gradient(to bottom, #67b26f, #4ca2cd);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s;
+    }
+
+    #btn:hover {
+        background: linear-gradient(to bottom, #4ca2cd, #67b26f);
+    }
+</style>
 <body>
     <h1>Input Form</h1>
-    <form action="/predict" method="POST">
+    <form action="/predict" method="POST" class="container">
         <label for="mean_radius">Mean Radius:</label>
         <input type="text" id="mean_radius" name="mean_radius" required><br><br>
 
@@ -96,7 +175,7 @@
         <label for="worst_fractal_dimension">Worst Fractal Dimension:</label>
         <input type="text" id="worst_fractal_dimension" name="worst_fractal_dimension" required><br><br>
 
-        <input type="submit" value="Predict">
+        <input type="submit" id="btn" value="Predict">
     </form>
 </body>
 </html>
